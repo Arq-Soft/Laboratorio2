@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="View"/></h1>
+                <p:panelGrid columns="2">
+                    <h:outputText value="Numerofactura:"/>
+                    <h:outputText value="#{pagosMBean.details.numerofactura}" title="Numerofactura"/>
+                    <h:outputText value="Nombre:"/>
+                    <h:outputText value="#{pagosMBean.details.nombre}" title="Nombre"/>
+                    <h:outputText value="Email:"/>
+                    <h:outputText value="#{pagosMBean.details.email}" title="Email"/>
+                    <h:outputText value="Cvv:"/>
+                    <h:outputText value="#{pagosMBean.details.cvv}" title="Cvv"/>
+                    <h:outputText value="Tipotarjeta:"/>
+                    <h:outputText value="#{pagosMBean.details.tipotarjeta}" title="Tipotarjeta"/>
+                    <h:outputText value="Valortransaccion:"/>
+                    <h:outputText value="#{pagosMBean.details.valortransaccion}" title="Valortransaccion"/>
+                    <h:outputText value="Numerotarjeta:"/>
+                    <h:outputText value="#{pagosMBean.details.numerotarjeta}" title="Numerotarjeta"/>
+                    <h:outputText value="Fechavencimientotarjeta:"/>
+                    <h:outputText value="#{pagosMBean.details.fechavencimientotarjeta}" title="Fechavencimientotarjeta">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="Fechafactura:"/>
+                    <h:outputText value="#{pagosMBean.details.fechafactura}" title="Fechafactura">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                </p:panelGrid>
+                <p:messages id="msg"/>
+                <p:captcha id="captcha"></p:captcha>
+                <h:commandButton id="back" value="Back" action="#{PagosMBean.list()}"/>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
