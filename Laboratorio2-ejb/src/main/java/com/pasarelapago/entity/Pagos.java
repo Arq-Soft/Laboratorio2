@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Pagos.findByValortransaccion", query = "SELECT p FROM Pagos p WHERE p.valortransaccion = :valortransaccion")
     , @NamedQuery(name = "Pagos.findByNumerotarjeta", query = "SELECT p FROM Pagos p WHERE p.numerotarjeta = :numerotarjeta")
     , @NamedQuery(name = "Pagos.findByFechavencimientotarjeta", query = "SELECT p FROM Pagos p WHERE p.fechavencimientotarjeta = :fechavencimientotarjeta")
-    , @NamedQuery(name = "Pagos.findByFechafactura", query = "SELECT p FROM Pagos p WHERE p.fechafactura = :fechafactura")})
+    , @NamedQuery(name = "Pagos.findByFechadefactura", query = "SELECT p FROM Pagos p WHERE p.fechadefactura = :fechadefactura")})
 public class Pagos implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -78,9 +78,11 @@ public class Pagos implements Serializable {
     @Column(name = "FECHAVENCIMIENTOTARJETA")
     @Temporal(TemporalType.DATE)
     private Date fechavencimientotarjeta;
-    @Column(name = "FECHAFACTURA")
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "FECHADEFACTURA")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fechafactura;
+    private Date fechadefactura;
 
     public Pagos() {
     }
@@ -89,7 +91,7 @@ public class Pagos implements Serializable {
         this.numerofactura = numerofactura;
     }
 
-    public Pagos(Integer numerofactura, String nombre, String email, int cvv, String tipotarjeta, int valortransaccion, String numerotarjeta) {
+    public Pagos(Integer numerofactura, String nombre, String email, int cvv, String tipotarjeta, int valortransaccion, String numerotarjeta, Date fechadefactura) {
         this.numerofactura = numerofactura;
         this.nombre = nombre;
         this.email = email;
@@ -97,6 +99,7 @@ public class Pagos implements Serializable {
         this.tipotarjeta = tipotarjeta;
         this.valortransaccion = valortransaccion;
         this.numerotarjeta = numerotarjeta;
+        this.fechadefactura = fechadefactura;
     }
 
     public Integer getNumerofactura() {
@@ -163,12 +166,12 @@ public class Pagos implements Serializable {
         this.fechavencimientotarjeta = fechavencimientotarjeta;
     }
 
-    public Date getFechafactura() {
-        return fechafactura;
+    public Date getFechadefactura() {
+        return fechadefactura;
     }
 
-    public void setFechafactura(Date fechafactura) {
-        this.fechafactura = fechafactura;
+    public void setFechadefactura(Date fechadefactura) {
+        this.fechadefactura = fechadefactura;
     }
 
     @Override

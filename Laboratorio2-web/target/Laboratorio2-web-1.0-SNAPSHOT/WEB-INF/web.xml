@@ -19,16 +19,16 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/PagosList.xhtml</welcome-file>
+        <welcome-file>faces/NewPago.xhtml</welcome-file>
     </welcome-file-list>
     
     <context-param>
     <param-name>primefaces.PUBLIC_CAPTCHA_KEY</param-name>
-    <param-value>6Lc7mt8ZAAAAAI5jnE9ljrBgMED1o2wDFegiKSBk</param-value>
+    <param-value>6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI</param-value>
 </context-param>
 
 <context-param>
     <param-name>primefaces.PRIVATE_CAPTCHA_KEY</param-name>
-    <param-value>6Lc7mt8ZAAAAAEV230ZPo03rWppa5kr52CegZH8b</param-value>
+    <param-value>6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe</param-value>
 </context-param>
 </web-app>

@@ -9,25 +9,24 @@
             background-color: activecaption !important;
             background-image: none !important;
             color: white !important;
+            height: 100px;
+            width: 100px;
         }
     </style>
-
     <h:head>
         <title>Lista de clientes</title>
     </h:head>
     <h:body>
-        <h1>Lista de clientes</h1>
         <f:view>
             <h:form>
-                <h1><h:outputText value="List"/></h1>
+                <h1><h:outputText value="Lista de pagos"/></h1>
                 <p:dataTable value="#{pagosMBean.pagos}" 
                              style="margin-bottom:20px"
                              var="item"
-                             paginator="true"
-                             rows="10"
+                             rows="6"
                              scrollable="true"
-                             scrollWidth="150%"
-                             scrollHeight="950"
+                             scrollWidth="100%"
+                             scrollHeight="850"
                              rendered="true"
                              resizableColumns="true"
                              sortMode="multiple"
@@ -41,13 +40,13 @@
                     </p:column>
 
                     <p:column headerText="Qr Code" >
-                        <p:barcode value="#{item.numerofactura} #{item.tipotarjeta} #{item.email}"
+                        <p:barcode value="#{item.numerofactura} #{item.valortransaccion} #{item.fechafactura}"
                                    type="qr" height="150px" width="150px" />
                     </p:column>
 
                     <p:column>
                         <f:facet name="header">
-                            <h:outputText value="Numerofactura"/>
+                            <h:outputText value="Numero de factura"/>
                         </f:facet>
                         <h:outputText value="#{item.numerofactura}"/>
                     </p:column>
@@ -59,47 +58,15 @@
                     </p:column>
                     <p:column>
                         <f:facet name="header">
-                            <h:outputText value="Email"/>
-                        </f:facet>
-                        <h:outputText value="#{item.email}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Cvv"/>
-                        </f:facet>
-                        <h:outputText value="#{item.cvv}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Tipotarjeta"/>
-                        </f:facet>
-                        <h:outputText value="#{item.tipotarjeta}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Valortransaccion"/>
+                            <h:outputText value="Valor de transaccion"/>
                         </f:facet>
                         <h:outputText value="#{item.valortransaccion}"/>
                     </p:column>
                     <p:column>
                         <f:facet name="header">
-                            <h:outputText value="Numerotarjeta"/>
+                            <h:outputText value="Fecha de factura"/>
                         </f:facet>
-                        <h:outputText value="#{item.numerotarjeta}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Fechavencimientotarjeta"/>
-                        </f:facet>
-                        <h:outputText value="#{item.fechavencimientotarjeta}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                        </h:outputText>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Fechafactura"/>
-                        </f:facet>
-                        <h:outputText value="#{item.fechafactura}">
+                        <h:outputText value="#{item.fechadefactura}">
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         </h:outputText>
                     </p:column>

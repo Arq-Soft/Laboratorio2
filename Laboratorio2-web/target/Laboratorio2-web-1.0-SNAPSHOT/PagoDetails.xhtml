@@ -12,7 +12,7 @@
             <h:form>
                 <h1><h:outputText value="View"/></h1>
                 <p:panelGrid columns="2">
-                    <h:outputText value="Numerofactura:"/>
+                    <h:outputText value="Numero de factura:"/>
                     <h:outputText value="#{pagosMBean.details.numerofactura}" title="Numerofactura"/>
                     <h:outputText value="Nombre:"/>
                     <h:outputText value="#{pagosMBean.details.nombre}" title="Nombre"/>
@@ -20,24 +20,25 @@
                     <h:outputText value="#{pagosMBean.details.email}" title="Email"/>
                     <h:outputText value="Cvv:"/>
                     <h:outputText value="#{pagosMBean.details.cvv}" title="Cvv"/>
-                    <h:outputText value="Tipotarjeta:"/>
+                    <h:outputText value="Tipo de tarjeta:"/>
                     <h:outputText value="#{pagosMBean.details.tipotarjeta}" title="Tipotarjeta"/>
-                    <h:outputText value="Valortransaccion:"/>
+                    <h:outputText value="Valor de transaccion:"/>
                     <h:outputText value="#{pagosMBean.details.valortransaccion}" title="Valortransaccion"/>
-                    <h:outputText value="Numerotarjeta:"/>
+                    <h:outputText value="Numero de tarjeta:"/>
                     <h:outputText value="#{pagosMBean.details.numerotarjeta}" title="Numerotarjeta"/>
-                    <h:outputText value="Fechavencimientotarjeta:"/>
+                    <h:outputText value="Fecha de vencimiento de tarjeta:"/>
                     <h:outputText value="#{pagosMBean.details.fechavencimientotarjeta}" title="Fechavencimientotarjeta">
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:outputText>
-                    <h:outputText value="Fechafactura:"/>
-                    <h:outputText value="#{pagosMBean.details.fechafactura}" title="Fechafactura">
+                    <h:outputText value="Fecha de factura:"/>
+                    <h:outputText value="#{pagosMBean.details.fechadefactura}" title="Fechadefactura">
                         <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                     </h:outputText>
                 </p:panelGrid>
+                <h2>Primefaces - Captcha</h2>
                 <p:messages id="msg"/>
                 <p:captcha id="captcha"></p:captcha>
-                <h:commandButton id="back" value="Back" action="#{PagosMBean.list()}"/>
+                <h:commandButton id="back" value="Back" action="#{pagosMBean.list()}"/>
             </h:form>
         </f:view>
 
