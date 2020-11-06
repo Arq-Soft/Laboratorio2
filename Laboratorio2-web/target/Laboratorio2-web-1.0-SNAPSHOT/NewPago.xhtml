@@ -13,27 +13,27 @@
                 <h1><h:outputText value="Create/Edit"/></h1>
                 <p:panelGrid columns="2">
                     <p:outputLabel value="NumeroFactura:" for="numerofactura"/>
-                    <p:inputText id="numerofactura" value="" title="Numero de factura" required="true" requiredMessage="El numero de factura es requerido"/>
+                       <p:inputText id="numerofactura" value="#{pagosMBean.details.numerofactura}" title="Numero de factura" required="true" requiredMessage="El numero de factura es requerido"/>
                     <p:outputLabel value="Nombre" for="nombre" />
-                    <p:inputText id="nombre" value="" title="Nombre" />
+                       <p:inputText id="nombre" value="#{pagosMBean.details.nombre}" title="Nombre" />
                     <p:outputLabel value="Email" for="email" />
-                    <p:inputText id="email" value="" title="Email" />
+                    <p:inputText id="email" value="#{pagosMBean.details.email}" title="Email" />
                     <p:outputLabel value="NumeroTarjeta:" for="numerotarjeta" />
-                    <p:inputText id="numerotarjeta" value="" title="Numero de tarjeta" />
+                    <p:inputText id="numerotarjeta" value="#{pagosMBean.details.numerotarjeta}" title="Numero de tarjeta" />
                     <p:outputLabel value="FechaTarjeta:" for="fechavencimientotarjeta" />
-                    <p:calendar id="fechavencimientotarjeta" value="" title="Fecha de vencimiento de la tarjeta" >
-                    </p:calendar>
-                    <p:outputLabel value="CVV:" for="cvv" />
-                    <p:inputText id="cvv" value="" title="CVV" />
+                    <p:calendar id="fechavencimientotarjeta" value="#{pagosMBean.details.fechavencimientotarjeta}" title="Fecha de vencimiento de la tarjeta" >
+                       </p:calendar>
+                    <p:outputLabel value="CVV:"  for="cvv" />
+                    <p:inputText id="cvv" value="#{pagosMBean.details.cvv}" title="CVV" />
                     <p:outputLabel value="TipoTarjeta:" for="tipotarjeta" />
-                    <p:inputText id="tipotarjeta" value="" title="Tipo de tarjeta" />
+                    <p:inputText id="tipotarjeta" value="#{pagosMBean.details.tipotarjeta}" title="Tipo de tarjeta" />
                     <p:outputLabel value="ValorTransacción:" for="valortransaccion" />
-                    <p:inputText id="valortransaccion" value="" title="Valor de la transacción"/>
-                    <p:outputLabel value="Fecha de factura:"/>
+                    <p:inputText id="valortransaccion" value="#{pagosMBean.details.valortransaccion}" title="Valor de la transacción"/>
+<!--                    <p:outputLabel value="Fecha de factura:"/>
                     <p:outputLabel value="" title="Fechadefactura">
-                    </p:outputLabel>
+                    </p:outputLabel>-->
                 </p:panelGrid>
-                <h:commandButton id="update" value="Update" action="#{pagosMBean.update()}"/>
+                <h:commandButton id="crear" value="Crear" action="#{pagosMBean.crear()}"/>
             </h:form>
         </f:view>
     </h:body>

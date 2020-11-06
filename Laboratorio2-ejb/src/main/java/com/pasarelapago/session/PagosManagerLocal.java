@@ -19,5 +19,8 @@ public interface PagosManagerLocal {
     List<Pagos> getAllPagos();
 
     Pagos update(Pagos pagos);
+
+    Pagos crear(Pagos pagos);
+
     
 }
