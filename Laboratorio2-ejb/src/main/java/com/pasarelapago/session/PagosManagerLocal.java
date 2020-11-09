@@ -21,6 +21,5 @@ public interface PagosManagerLocal {
     Pagos update(Pagos pagos);
 
     Pagos crear(Pagos pagos);
-
     
 }

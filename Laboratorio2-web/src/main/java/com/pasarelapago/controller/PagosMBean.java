@@ -49,7 +49,7 @@ public class PagosMBean {
      */
     public String showDetails(Pagos pago) {
         this.pago = pago;
-        return "DETAILS"; // Permite enlazar a CustomerDetails.xml
+        return "DETAILS"; // Permite enlazar a PagoDetails.xml
     }
 
     
@@ -81,8 +81,10 @@ public class PagosMBean {
         System.out.println("###CREAR###");
         Date fecha =  new Date();
         pago.setFechadefactura(fecha);
+        System.out.println(pagosManager.crear(pago));
         pago = pagosManager.crear(pago);
-        return "SAVED"; // Para el caso navegacional
+        System.out.println(pago);
+        return "CREAR"; // Para el caso navegacional
     }
     
     /**
@@ -100,3 +102,5 @@ public class PagosMBean {
     }
     
 }
+
+

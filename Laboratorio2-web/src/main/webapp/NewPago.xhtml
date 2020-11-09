@@ -13,26 +13,33 @@
                 <h1><h:outputText value="Create/Edit"/></h1>
                 <p:panelGrid columns="2">
                     <p:outputLabel value="NumeroFactura:" for="numerofactura"/>
-                       <p:inputText id="numerofactura" value="#{pagosMBean.details.numerofactura}" title="Numero de factura" required="true" requiredMessage="El numero de factura es requerido"/>
+                    <p:inputText id="numerofactura" value="#{pagosMBean.details.numerofactura}" title="Numero de factura" required="true" requiredMessage="El numero de factura es requerido"/>
                     <p:outputLabel value="Nombre" for="nombre" />
-                       <p:inputText id="nombre" value="#{pagosMBean.details.nombre}" title="Nombre" />
+                    <p:inputText id="nombre" value="#{pagosMBean.details.nombre}" title="Nombre" required="true" requiredMessage="El nombre es requerido"/>
                     <p:outputLabel value="Email" for="email" />
-                    <p:inputText id="email" value="#{pagosMBean.details.email}" title="Email" />
+                    <p:inputText id="email" value="#{pagosMBean.details.email}" title="Email" required="true" requiredMessage="El Email requerido"/>
                     <p:outputLabel value="NumeroTarjeta:" for="numerotarjeta" />
-                    <p:inputText id="numerotarjeta" value="#{pagosMBean.details.numerotarjeta}" title="Numero de tarjeta" />
+                    <p:inputText id="numerotarjeta" value="#{pagosMBean.details.numerotarjeta}" title="Numero de tarjeta" required="true" requiredMessage="El numero de tarjeta es requerido" />
                     <p:outputLabel value="FechaTarjeta:" for="fechavencimientotarjeta" />
-                    <p:calendar id="fechavencimientotarjeta" value="#{pagosMBean.details.fechavencimientotarjeta}" title="Fecha de vencimiento de la tarjeta" >
-                       </p:calendar>
+                    <p:calendar id="fechavencimientotarjeta" value="#{pagosMBean.details.fechavencimientotarjeta}" title="Fecha de vencimiento de la tarjeta" required="true" requiredMessage="La fecha de vencimiento de la tarjeta es requerido" >
+                    </p:calendar>
                     <p:outputLabel value="CVV:"  for="cvv" />
-                    <p:inputText id="cvv" value="#{pagosMBean.details.cvv}" title="CVV" />
+                    <p:inputText id="cvv" value="#{pagosMBean.details.cvv}" title="CVV" required="true" requiredMessage="El numero del CVV es requerido" />
                     <p:outputLabel value="TipoTarjeta:" for="tipotarjeta" />
-                    <p:inputText id="tipotarjeta" value="#{pagosMBean.details.tipotarjeta}" title="Tipo de tarjeta" />
-                    <p:outputLabel value="ValorTransacción:" for="valortransaccion" />
-                    <p:inputText id="valortransaccion" value="#{pagosMBean.details.valortransaccion}" title="Valor de la transacción"/>
-<!--                    <p:outputLabel value="Fecha de factura:"/>
-                    <p:outputLabel value="" title="Fechadefactura">
-                    </p:outputLabel>-->
+                    <p:selectOneMenu id="tipotarjeta" value="#{pagosMBean.details.tipotarjeta}" style="width:200px"  required="true">
+                        <f:selectItem itemLabel="Select One" itemValue="" />
+                        <f:selectItem itemLabel="American Express" itemValue="American Express" />
+                        <f:selectItem itemLabel="Diners" itemValue="Diners" />
+                        <f:selectItem itemLabel="Visa" itemValue="Visa" />
+                        <f:selectItem itemLabel="Mastercard" itemValue="Mastercard" />
+                    </p:selectOneMenu>
+                    
+                    <p:outputLabel value="ValorTransacción:" for="valortransaccion" />                    
+                    <p:inputText id="valortransaccion" value="#{pagosMBean.details.valortransaccion}" title="Valor de la transacción" required="true" requiredMessage="El valor de factura es requerido"/>
                 </p:panelGrid>
+                <h2>Primefaces - Captcha</h2>
+                <p:messages id="msg"/>
+                <p:captcha id="captcha"></p:captcha>
                 <h:commandButton id="crear" value="Crear" action="#{pagosMBean.crear()}"/>
             </h:form>
         </f:view>
